@@ -1,0 +1,76 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  /* background: rgb(0 100 0 / 0.05) !important; */
+}
+
+html {
+  font-size: 62.5%;
+  /* 62.5% font size = 1rem */
+  /* 1rem = 10px = 62.5% */
+}
+
+#test_area {
+  text-decoration: none;
+  /* height: fit-content; */
+  /* width: 100%; */
+  resize: none; /* Prevent textarea from expanding */
+}
+
+label {
+  display: none;
+}
+button {
+  width: 150px;
+  height: 60px;
+  border: 3px solid #315cfd;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  font-family: "Montserrat", sans-serif;
+}
+
+button:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.5em;
+}
+
+form > div {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+@media (width <= 320px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (width >= 1440px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (width >= 2560px) {
+  html {
+    font-size: 104%;
+  }
+}
+
+@media (width <= 375px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media (375px <= width <= 768px) {
+  html {
+    font-size: 40%;
+  }
+}
