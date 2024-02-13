@@ -3,3 +3,5 @@ document.getElementById("form")!.addEventListener("submit", (e) => {
   let val = (<HTMLInputElement>document.getElementById("test_area"))!.value;
   console.log(val);
 });
+
+console.log("it is from src/notes/notes.ts");

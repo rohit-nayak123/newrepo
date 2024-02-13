@@ -1,3 +1,5 @@
+// import "./routes.ts";
+
 // const ul = document.getElementById("ul");
 // const li = document.createElement("li");
 // console.log(li, ul);
@@ -15,15 +17,18 @@
 
 let toDos: Set<string> = new Set();
 
-document.getElementById("form")!.addEventListener("submit", (e) => {
+document.getElementById("form")?.addEventListener("submit", (e) => {
   e.preventDefault();
-  let val = (<HTMLInputElement>document.getElementById("input"))!.value;
+  let val = (<HTMLInputElement>document.getElementById("input")).value;
 
   if (val.trim().length !== 0 && val !== " ") {
     toDos.add(val);
     filterToDos(val);
   }
-  document.querySelector("input")!.value = "";
+  const inputElement = document.querySelector<HTMLInputElement>("input");
+  if (inputElement !== null) {
+    inputElement.value = "";
+  }
 });
 
 // const filterToDos = (val: string) => {
@@ -79,7 +84,7 @@ function filterToDos(val: string) {
     </span></button><div><p id="${val}">${val}</p></div><button data-my-attribute="${val}" ><span class="material-symbols-outlined" data-my-attribute="${val}">
     delete_forever
     </span></button>`;
-    document.getElementById("ul")!.appendChild(li);
+    document.getElementById("ul")?.appendChild(li);
     // num++
   } else {
     let allvalues = localStorage.getItem("allvalues") as string;
@@ -97,7 +102,7 @@ function filterToDos(val: string) {
       </span></button><div><p id="${val}">${val}</p></div><button data-my-attribute="${val}" ><span class="material-symbols-outlined" data-my-attribute="${val}">
       delete_forever
       </span></button>`;
-      document.getElementById("ul")!.appendChild(li);
+      document.getElementById("ul")?.appendChild(li);
 
       let string = JSON.stringify([...newSet]);
       localStorage.setItem("allvalues", string);
@@ -119,7 +124,7 @@ function displayToDos() {
       </span></button><div><p id="${key}">${key}</p></div><button data-my-attribute="${key}" ><span class="material-symbols-outlined" data-my-attribute="${key}">
       delete_forever
       </span></button>`;
-      document.getElementById("ul")!.appendChild(li);
+      document.getElementById("ul")?.appendChild(li);
       // num++
     });
 
@@ -133,7 +138,10 @@ function displayToDos() {
       // let pendingArr = JSON.parse(arr);
       // console.log(pendingArr);
 
-      document.querySelector(`p[id="${key}"]`)!.innerHTML = `<del>${key}</del>`;
+      let p = document.querySelector<HTMLParagraphElement>(`p[id="${key}"]`);
+      if (p !== null) {
+        p.innerHTML = `<del>${key}</del>`;
+      }
     });
 
     // JSON.parse(arr).forEach((key: any) => {
@@ -172,7 +180,7 @@ function removeToDos() {
         `${(event.target as HTMLElement).dataset.myAttribute}`
       );
 
-      let innerText = p!.innerText as string;
+      let innerText = p?.innerText as string;
       // console.log(p, innerText);
 
       if (p) {
