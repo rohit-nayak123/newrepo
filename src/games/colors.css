@@ -1,0 +1,32 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+main {
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, minmax(min-content)); */
+  /* grid-template-columns: repeat(3); */
+  /* grid-template-rows: minmax(); */
+  display: grid;
+  width: 100dvw;
+  height: 100dvh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+main > div {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+/* image {
+  width: 40px;
+  height: 60px;
+} */
+
+/* shink a image */

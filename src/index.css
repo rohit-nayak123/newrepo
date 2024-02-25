@@ -18,7 +18,7 @@ body {
   height: 100dvh;
   width: 100dvw;
   /*grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; */
+      grid-template-rows: 1fr 1fr 1fr; */
 }
 
 img {
@@ -187,7 +187,7 @@ button[data-my-attribute] {
 
 button[data-my-attribute]:nth-child(1):hover {
   /*color: #3cff46;*/
-  color: lawngreen;
+  color: #00ff0b;
 }
 
 button[data-my-attribute]:nth-last-child(1):hover {
@@ -240,3 +240,5 @@ del {
     font-size: 40%;
   }
 }
+
+/* Style the button with a gradient background and rounded corners */
