@@ -1,5 +1,3 @@
-// import "./routes.ts";
-
 // const ul = document.getElementById("ul");
 // const li = document.createElement("li");
 // console.log(li, ul);
@@ -25,10 +23,7 @@ document.getElementById("form")?.addEventListener("submit", (e) => {
     toDos.add(val);
     filterToDos(val);
   }
-  const inputElement = document.querySelector<HTMLInputElement>("input");
-  if (inputElement !== null) {
-    inputElement.value = "";
-  }
+  (document.querySelector("input") as HTMLInputElement).value = "";
 });
 
 // const filterToDos = (val: string) => {
@@ -245,5 +240,4 @@ function removeToDos() {
   });
 }
 
-console.log("this is wow");
 removeToDos();
